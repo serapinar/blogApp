@@ -16,7 +16,7 @@ export default function App () {
     return (
         <Provider>
             <NavigationContainer>
-                <Stack.Navigator screenOptions={{headerTitle: "Blog"}}>
+                <Stack.Navigator screenOptions={{headerTitle: "MyBlog"}}>
                     <Stack.Screen name="Index" component={IndexScreen} options={({navigation})=> ({
                         headerRight: () => (
                             <TouchableOpacity onPress={() => navigation.navigate ("Create")}>
