@@ -1,12 +1,13 @@
 import React from 'react';
-import {  Text, View } from 'react-native';
-
+import {StyleSheet, View} from 'react-native';
+import BlogPostForm from '../components/BlogPostForm';
 export default function CreateScreen() {
     return (
         <View>
-            <Text> CreateScreen </Text>
+            <BlogPostForm/>
         </View>
     );
 }
 
 
+const styles = StyleSheet.create ({ });
