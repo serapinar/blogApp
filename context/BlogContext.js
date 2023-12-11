@@ -34,12 +34,7 @@ const getBlogPosts =  (dispatch) => {
         dispatch ({type: "get_blogpost", payload:response.data });
     };
 };
-const deleteBlogPost = (dispatch) => {
-    return async (id) => {
-        await jsonServer.delete(`/blogposts/${id}`);
-        dispatch ({ type:"delete_blogpost", payload:id });
-    };
-};
+
 const editBlogPost = (dispatch) => {
     return async (id, title, content, callback) => {
         await jsonServer.put(`/blogposts/${id}`, {title, content});
@@ -48,7 +43,15 @@ const editBlogPost = (dispatch) => {
     };
 
 };
+const deleteBlogPost = (dispatch) => {
+    return async (id) => {
+        await jsonServer.delete(`/blogposts/${id}`);
+        dispatch ({ type:"delete_blogpost", payload:id });
+    };
+};
+
 export const { Context, Provider} = createDataContext(
     blogReducer,
     {addBlogPost, deleteBlogPost, editBlogPost, getBlogPosts},
     []);
+
